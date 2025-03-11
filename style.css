@@ -39,6 +39,10 @@ nav ul li a {
     font-weight: bold;
 }
 
+nav ul li a:visited {
+    color: white;
+}
+
 nav ul li a:hover {
     text-decoration: underline;
 }
