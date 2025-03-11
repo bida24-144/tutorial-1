@@ -47,6 +47,22 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
+.shop-btn {
+    display: inline-block;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.shop-btn:hover {
+    background-color: #555;
+}
+
 main {
     padding: 20px;
 }
