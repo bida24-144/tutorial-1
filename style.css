@@ -39,7 +39,7 @@ nav ul li a {
     font-weight: bold;
 }
 
-nav a|:visited {
+nav a :visited {
     color: white;
 }
 
