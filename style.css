@@ -144,6 +144,36 @@ main {
 
 .product-card button:hover {
     background-color: #555;
+
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 15px;
+    font-size: 1.2em;
+}
+
+.contact-icon {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .contact-info {
+        flex-direction: column;
+    }
 }
 
 footer {
