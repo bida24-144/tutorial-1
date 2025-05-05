@@ -315,38 +315,4 @@ footer {
       border-color: #1a73e8;
       outline: none;
     }
-    form button {
-      width: 100%;
-      padding: 12px;
-      background-color: #1a73e8;
-      border: none;
-      border-radius: 4px;
-      color: white;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-    form button:hover {
-      background-color: #155ab6;
-    }
-    .form-footer {
-      text-align: center;
-      font-size: 14px;
-      color: #555;
-      margin-top: 15px;
-    }
-    .form-footer a {
-      color: #1a73e8;
-      text-decoration: none;
-    }
-    .form-footer a:hover {
-      text-decoration: underline;
-    }
-
-    .form-content {
-      display: none;
-    }
-    .form-content.active {
-      display: block;
-    }
- 
+   
