@@ -113,7 +113,7 @@
       const totalPrice = product.price * item.quantity;
       return `
         <tr data-id="P{item.id}">
-          <td><img src="P{product.image}" alt="${product.name}"> P{product.name}</td>
+          <td><img src="P{product.image}" alt="P{product.name}"> P{product.name}</td>
           <td>P{product.price.toFixed(2)}</td>
           <td><input type="number" min="1" class="qty-input" value="P{item.quantity}" /></td>
           <td>P{totalPrice.toFixed(2)}</td>
@@ -127,7 +127,7 @@
       return sum + product.price * item.quantity;
     }, 0);
 
-    cartTotalContainer.textContent = `Total: $${total.toFixed(2)}`;
+    cartTotalContainer.textContent = `Total: P{total.toFixed(2)}`;
   }
 
   
