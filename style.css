@@ -47,23 +47,6 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
- body {
-      margin: 0;
-      padding: 0;
-   
-    }
-    .logo {
-      height: 48px;
-      width: 48px;
-      margin-right: 14px;
-    }
-    .site-name {
-      font-size: 2em;
-      font-family: 'Segoe Script', cursive;
-      color: #1a73e8;
-      font-weight: bold;
-      letter-spacing: 1px;
-    }
 .shop-btn {
     display: inline-block;
     background-color: #333;
