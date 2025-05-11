@@ -50,18 +50,7 @@ nav ul li a:hover {
  body {
       margin: 0;
       padding: 0;
-    }
-    header {
-      background: #fff;
-      box-shadow: 0 2px 8px #eee;
-      padding: 12px 0;
-    }
-    .header-container {
-      display: flex;
-      align-items: center;
-      max-width: 1100px;
-      margin: auto;
-      padding: 0 20px;
+   
     }
     .logo {
       height: 48px;
