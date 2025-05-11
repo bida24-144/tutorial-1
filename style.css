@@ -342,4 +342,112 @@ container {
     .form-content.active {
       display: block;
     }
+
+.products, .cart {
+      max-width: 900px;
+      margin: 20px auto;
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    .products {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .product-card {
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 15px;
+      width: 220px;
+      text-align: center;
+      transition: box-shadow 0.2s;
+    }
+    .product-card:hover {
+      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    }
+    .product-card img {
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+      margin-bottom: 12px;
+    }
+    .product-title {
+      font-weight: bold;
+      font-size: 18px;
+      margin-bottom: 8px;
+      color: #222;
+    }
+    .product-price {
+      color: #1a73e8;
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+    button.add-to-cart {
+      background-color: #1a73e8;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 4px;
+      font-size: 15px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    button.add-to-cart:hover {
+      background-color: #155ab6;
+    }
+   
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 12px 10px;
+      border-bottom: 1px solid #ddd;
+      text-align: center;
+    }
+    th {
+      background-color: #f0f2f5;
+      font-weight: 600;
+      color: #333;
+    }
+    td img {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+      border-radius: 4px;
+    }
+    input.qty-input {
+      width: 50px;
+      padding: 6px;
+      font-size: 16px;
+      text-align: center;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button.remove-btn {
+      background: none;
+      border: none;
+      color: #e53935;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button.remove-btn:hover {
+      text-decoration: underline;
+    }
+    .cart-total {
+      text-align: right;
+      font-size: 20px;
+      font-weight: bold;
+      margin-top: 15px;
+      color: #1a73e8;
+    }
+    .empty-cart {
+      text-align: center;
+      font-size: 18px;
+      color: #777;
+      padding: 40px 0;
+    }
   
