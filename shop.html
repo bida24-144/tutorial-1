@@ -19,7 +19,7 @@
         </nav>
     </header>
 
-  <main>
+  
 <label for="categoryFilter"><strong>Filter by Category:</strong></label>
   <select id="categoryFilter" onchange="filterProducts()">
   <span class="select-wrap">
@@ -31,37 +31,110 @@
         <option>Team Sports</option>
     </select>
 
-       <div id="productList">
+    <div class="products" id="productList">
     
-    <div class="product" data-category="Fitness Sports">Dumbbells</div>
-    <div class="product" data-category="Indoor Sports">Table Tennis Paddle</div>
-    <div class="product" data-category="Outdoor Sports">Mountain Bike</div>
-    <div class="product" data-category="Running and Walking">Running Shoes</div>
-    <div class="product" data-category="Team Sports">Soccer Ball</div>
-    <div class="product" data-category="Fitness Sports">Yoga Mat</div>
-    <div class="product" data-category="Indoor Sports">Badminton Racket</div>
-    <div class="product" data-category="Team Sports">Basketball Jersey</div>
   </div>
 
   <script>
-    function filterProducts() {
-      const selectedCategory = document.getElementById('categoryFilter').value;
-      const products = document.querySelectorAll('.product');
-      products.forEach(product => {
-        const category = product.getAttribute('data-category');
-        if (selectedCategory === "All" || category === selectedCategory) {
-          product.classList.remove('hidden');
-        } else {
-          product.classList.add('hidden');
-        }
+   
+    const products = [
+      { 
+        title: "Yoga Mat", 
+        category: "Fitness Sports", 
+        desc: "Non-slip mat for yoga and fitness exercises.",
+        img: "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80"
+      },
+      { 
+        title: "Dumbbell Set", 
+        category: "Fitness Sports", 
+        desc: "Adjustable dumbbells for strength training.",
+        img: "https://images.unsplash.com/photo-1517960413843-0aee8e2d471c?auto=format&fit=crop&w=400&q=80"
+      },
+      { 
+        title: "Table Tennis Racket", 
+        category: "Indoor Sports", 
+        desc: "Professional quality for indoor play.",
+        img: "https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=400&q=80"
+      },
+      { 
+        title: "Chess Set", 
+        category: "Indoor Sports", 
+        desc: "Classic wooden chess set for all ages.",
+        img: "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=400&q=80"
+      },
+      { 
+        title: "Mountain Bike", 
+        category: "Outdoor Sports", 
+        desc: "Durable bike for off-road adventures.",
+        img: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"
+      },
+      { 
+        title: "Camping Tent", 
+        category: "Outdoor Sports", 
+        desc: "Waterproof tent for 4 people.",
+        img: "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80"
+      },
+      { 
+        title: "Running Shoes", 
+        category: "Running and Walking", 
+        desc: "Lightweight shoes for running and jogging.",
+        img: "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=400&q=80"
+      },
+      { 
+        title: "Fitness Tracker", 
+        category: "Running and Walking", 
+        desc: "Track your steps and calories burned.",
+        img: "https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?auto=format&fit=crop&w=400&q=80"
+      },
+      { 
+        title: "Soccer Ball", 
+        category: "Team Sports", 
+        desc: "Official size and weight for matches.",
+        img: "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=400&q=80"
+      },
+      { 
+        title: "Basketball Jersey", 
+        category: "Team Sports", 
+        desc: "Breathable jersey for team games.",
+        img: "https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=400&q=80"
+      }
+    ];
+
+    const productList = document.getElementById('productList');
+    const categorySelect = document.getElementById('category');
+
+    function renderProducts(category) {
+      productList.innerHTML = '';
+      const filtered = category === 'All'
+        ? products
+        : products.filter(p => p.category === category);
+
+      if (filtered.length === 0) {
+        productList.innerHTML = '<p>No products found in this category.</p>';
+        return;
+      }
+
+      filtered.forEach(product => {
+        const card = document.createElement('div');
+        card.className = 'product-card';
+        card.innerHTML = `
+          <img src="${product.img}" alt="${product.title}" class="product-img">
+          <div class="product-title">${product.title}</div>
+          <div class="product-category">${product.category}</div>
+          <div class="product-desc">${product.desc}</div>
+        `;
+        productList.appendChild(card);
       });
     }
+
+    
+    renderProducts('All');
+
+    
+    categorySelect.addEventListener('change', function() {
+      renderProducts(this.value);
+    });
   </script>
 
-  </span>
-   
-  </main>
-
-   
 </body>
 </html>
