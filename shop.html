@@ -31,6 +31,34 @@
       <option>Running and Walking</option>
         <option>Team Sports</option>
     </select>
+
+       <div id="productList">
+    
+    <div class="product" data-category="Fitness Sports">Dumbbells</div>
+    <div class="product" data-category="Indoor Sports">Table Tennis Paddle</div>
+    <div class="product" data-category="Outdoor Sports">Mountain Bike</div>
+    <div class="product" data-category="Running and Walking">Running Shoes</div>
+    <div class="product" data-category="Team Sports">Soccer Ball</div>
+    <div class="product" data-category="Fitness Sports">Yoga Mat</div>
+    <div class="product" data-category="Indoor Sports">Badminton Racket</div>
+    <div class="product" data-category="Team Sports">Basketball Jersey</div>
+  </div>
+
+  <script>
+    function filterProducts() {
+      const selectedCategory = document.getElementById('categoryFilter').value;
+      const products = document.querySelectorAll('.product');
+      products.forEach(product => {
+        const category = product.getAttribute('data-category');
+        if (selectedCategory === "All" || category === selectedCategory) {
+          product.classList.remove('hidden');
+        } else {
+          product.classList.add('hidden');
+        }
+      });
+    }
+  </script>
+
   </span>
    
   </main>
