@@ -47,23 +47,25 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
-.shop-btn {
-    display: inline-block;
-    background-color: #333;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    margin-top: 20px;
-}
-
-display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 100px;
-}
+.category-nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 48px;
+      margin: 40px 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .category-link {
+      text-decoration: none;
+      color: #111;
+      font-size: 1.6em;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+      transition: color 0.2s;
+    }
+    .category-link:hover {
+      color: #4a90e2; 
+    }
 form {
     width: 60%;
     margin: 0 auto;
