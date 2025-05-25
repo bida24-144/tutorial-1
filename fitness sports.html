@@ -34,7 +34,7 @@
    
   </div>
 
-  <div class="cart-message" id="cartMessage">#</div>
+  <div class="cart-message" id="cartMessage">"Product added to cart"</div>
 
   <script>
     const products = [
@@ -42,7 +42,7 @@
         id: 1,
         name: "Yoga Mat",
         description: "Non-slip mat for yoga and fitness exercises. Comfortable and durable.",
-        price: P29.99,
+        price: 29.99,
         image: "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80"
       },
       {
@@ -56,14 +56,14 @@
         id: 3,
         name: "Resistance Bands",
         description: "Set of resistance bands for strength and flexibility workouts.",
-        price: 19.99
+        price: 19.99,
         image: "https://images.unsplash.com/photo-1598970434795-0c54fe7c0642?auto=format&fit=crop&w=400&q=80"
       },
       {
         id: 4,
         name: "Kettlebell",
         description: "Cast iron kettlebell perfect for strength and cardio workouts.",
-        price: 59.00
+        price: 49.00,
         image: "https://images.unsplash.com/photo-1598970434795-0c54fe7c0642?auto=format&fit=crop&w=400&q=80"
       }
     ];
@@ -75,12 +75,11 @@
       const card = document.createElement('div');
       card.className = 'product-card';
       card.innerHTML = `
-        <img src="P{product.image}" alt="P{product.name}" class="product-image" />
+        <img src="${product.image}" alt="${product.name}" class="product-image" />
         <div class="product-info">
-          <div class="product-name">P{product.name}</div>
-          <div class="product-description">P{product.description}</div>
-          <div class="product-price">P{product.price.toFixed(2)}</div>
-          <button class="add-to-cart-btn" data-id="P{product.id}">Add to Cart</button>
+          <div class="product-name">${product.description}</div>
+          <div class="product-price">$P{product.price.toFixed(2)}</div>
+          <button class="add-to-cart-btn" data-id="S{product.id}">Add to Cart</button>
         </div>
       `;
       return card;
