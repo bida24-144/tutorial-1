@@ -29,90 +29,46 @@
 
 </header>
 
-<main>
-   <div class="product-grid" id="productGrid">
-   
-  </div>
-
-  <div class="cart-message" id="cartMessage">"Product added to cart"</div>
-
-  <script>
-    const products = [
-      {
-        id: 1,
-        name: "Yoga Mat",
-        description: "Non-slip mat for yoga and fitness exercises. Comfortable and durable.",
-        price: 29.99,
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiGPNAGoL1wsQJ2Qb48g38lZ_fwCiwJXiyrw&s" alt="Product 1">
-      },
-      {
-        id: 2,
-        name: "Dumbbell Set",
-        description: "Adjustable dumbbells for strength training at home or gym.",
-        price: 79.99,
-        image: "https://images.unsplash.com/photo-1517960413843-0aee8e2d471c?auto=format&fit=crop&w=400&q=80"
-      },
-      {
-        id: 3,
-        name: "Resistance Bands",
-        description: "Set of resistance bands for strength and flexibility workouts.",
-        price: 19.99,
-        image: "https://images.unsplash.com/photo-1598970434795-0c54fe7c0642?auto=format&fit=crop&w=400&q=80"
-      },
-      {
-        id: 4,
-        name: "Kettlebell",
-        description: "Cast iron kettlebell perfect for strength and cardio workouts.",
-        price: 49.00,
-        image: "https://images.unsplash.com/photo-1598970434795-0c54fe7c0642?auto=format&fit=crop&w=400&q=80"
-      }
-    ];
-
-    const productGrid = document.getElementById('productGrid');
-    const cartMessage = document.getElementById('cartMessage');
-
-    function createProductCard(product) {
-      const card = document.createElement('div');
-      card.className = 'product-card';
-      card.innerHTML = `
-        <img src="${product.image}" alt="${product.name}" class="product-image" />
-        <div class="product-info">
-          <div class="product-name">${product.description}</div>
-          <div class="product-price">P{product.price.toFixed(2)}</div>
-          <button class="add-to-cart-btn" data-id="S{product.id}">Add to Cart</button>
+<main class="featured container">
+  <main class="featured container">
+        <h2 class="section-title">Fitness sports</h2>
+        <div class="products">
+            <!--products for fitness sports-->
+            <div class="product" data-id="301" data-name="Yoga Mat" data-price="29.00" data-description="Non-slip mat for yoga and fitness exercises. Comfortable and durable.">
+                <img src="Images/yogamat.jpg" alt="YogaMat" />
+                <div class="product-info">
+                    <h3>YogaMats</h3>
+                    <p>Durable Mat</p>
+                    <div class="product-action">
+                        <span class="price">P 29.00</span>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-id="302" data-name="Dumbellsets" data-price="79.00" data-description="Adjustable dumbells for strength training at home or gym.">
+                <img src="Images/casual sneakers.jpg" alt="Casual Sneakers" />
+                <div class="product-info">
+                    <h3>Casual Sneakers</h3>
+                    <p>Comfortable for everyday wear</p>
+                    <div class="product-action">
+                        <span class="price">P 1,299.00</span>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-id="303" data-name="Sports Sandals" data-price="799.00" data-description="Lightweight sports sandals with adjustable straps.">
+                <img src="Images/sports sandal.jpg" alt="Sports Sandals" />
+                <div class="product-info">
+                    <h3>Sports Sandals</h3>
+                    <p>Lightweight and adjustable</p>
+                    <div class="product-action">
+                        <span class="price">P 799.00</span>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
         </div>
-      `;
-      return card;
-    }
-
-    function renderProducts() {
-      productGrid.innerHTML = '';
-      products.forEach(product => {
-        const card = createProductCard(product);
-        productGrid.appendChild(card);
-      });
-    }
-
-    function showCartMessage() {
-      cartMessage.style.display = 'block';
-      setTimeout(() => {
-        cartMessage.style.display = 'none';
-      }, 2000);
-    }
-
-   
-    renderProducts();
-
-   
-    productGrid.addEventListener('click', (e) => {
-      if (e.target.classList.contains('add-to-cart-btn')) {
-        const productId = e.target.getAttribute('data-id');
-        
-        showCartMessage();
-      }
-    });
-  </script>
-
+    </main>
 </main>
 
 
