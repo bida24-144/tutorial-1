@@ -42,7 +42,45 @@
 
 </main>
 
-
+<script>
+                //JavaScript for cart functionality
+                function formatPrice (price) {
+                    return 'R' + price.toFixed(2);
+                }
+                let cart= JSON.parse(localstorage.getitem('cart')) || [];
+                const cartCountE1 = document.getElementyId('cartcount');
+                const addToCartButtons + document.querySelectorAll('.add-tocart');
+                function updateCartCount() {
+                    const count = cart.reduce((sum,item) => sum + item.quantity, 0);
+                    cartcountE1.textcontent = count;
+                }
+                function savecart() {
+                    local storage.setitem('cart', JSON.stringify(cart));
+                    updateCartCount();
+                }
+                function addItemToCart(id, name, price, image) {
+            const existingItem = cart.find(item => item.id === id);
+            if (existingItem) {
+                existingItem.quantity++;
+            } else {
+                cart.push({ id, name, price, image, quantity: 1 });
+            }
+            saveCart();
+            alert(`${name} added to cart.`);
+        }
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', e => {
+                const productEl = e.target.closest('.product');
+                const id = parseInt(productEl.getAttribute('data-id'));
+                const name = productEl.getAttribute('data-name');
+                const price = parseFloat(productEl.getAttribute('data-price'));
+                const image = productEl.querySelector('img').src;
+                addItemToCart(id, name, price, image);
+            });
+        });
+        updateCartCount();                
+            </script>
+            
 </body>
 
 </html>
