@@ -34,6 +34,39 @@
 
 <main>
 
+  
+  <div id="cart">🛒 Cart: <span id="cartCount">0</span> items</div>
+
+  <div class="product">
+    <div class="product-name">Table Tennis Paddle</div>
+    <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+  </div>
+
+  <div class="product">
+    <div class="product-name">Indoor Basketball Hoop</div>
+    <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+  </div>
+
+  <div class="product">
+    <div class="product-name">Badminton Racket Set</div>
+    <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+  </div>
+
+  <div class="product">
+    <div class="product-name">Yoga Mat</div>
+    <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+  </div>
+
+  <script>
+    let cartCount = 0;
+
+    function addToCart() {
+      cartCount++;
+      document.getElementById("cartCount").textContent = cartCount;
+    }
+  </script>
+
+
 
 </main>
 
